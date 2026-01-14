@@ -7,6 +7,13 @@
  * 3. Cost tracking across iterations
  * 4. Human-in-the-loop code reviews
  * 5. Rollback capabilities
+
+  
+
+ *ATTENTION PLEASE These are examples for typescript, the repo claude_modular_temporal has been built with python
+ 
+ 
+
  */
 
 import { 
