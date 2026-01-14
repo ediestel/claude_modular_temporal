@@ -20,6 +20,136 @@ Claude Temporal treats modular Claude Code commands as Temporal Activities with:
 - **Parallel Feature Development** - Develop multiple features concurrently on isolated branches
 - **Iterative Refinement** - Automatically retry fixes until tests pass
 
+## Modular Commands (claude_modular)
+
+Claude Temporal includes a modular command system in `.claude/commands/` that provides reusable, structured prompts for common development tasks. These commands can be invoked as slash commands within Claude Code.
+
+### Command Categories
+
+| Category | Commands | Description |
+|----------|----------|-------------|
+| **documentation** | `api-docs`, `update-readme`, `architecture-review` | Generate and maintain documentation |
+| **development** | `code-review`, `debug-session`, `refactor-analysis` | Development workflow automation |
+| **project** | `create-feature`, `scaffold-component`, `setup-environment` | Project scaffolding and setup |
+| **testing** | `generate-tests`, `integration-tests`, `coverage-analysis` | Test generation and analysis |
+| **deployment** | `prepare-release`, `rollback-procedure`, `deploy-staging` | Deployment automation |
+| **custom** | `domain-activator` | Domain-specific template injection |
+
+### Using Modular Commands
+
+Invoke commands using the slash command syntax in Claude Code:
+
+```bash
+# Documentation commands
+/documentation:api-docs           # Generate API documentation
+/documentation:update-readme      # Update README with latest changes
+/documentation:architecture-review # Review system architecture
+
+# Development commands
+/development:code-review          # Comprehensive code review
+/development:debug-session        # Interactive debugging session
+/development:refactor-analysis    # Analyze code for refactoring
+
+# Project commands
+/project:create-feature <name>    # Create new feature with full scaffolding
+/project:scaffold-component       # Generate component boilerplate
+/project:setup-environment        # Configure development environment
+
+# Testing commands
+/testing:generate-tests           # Generate unit and integration tests
+/testing:integration-tests        # Create integration test suite
+/testing:coverage-analysis        # Analyze test coverage
+
+# Deployment commands
+/deployment:prepare-release       # Prepare release artifacts
+/deployment:rollback-procedure    # Document rollback steps
+/deployment:deploy-staging        # Deploy to staging environment
+```
+
+### Command Structure
+
+Each command is a markdown file with structured instructions:
+
+```markdown
+# Command Name
+
+<instructions>
+  <context>
+    Description of what this command does and when to use it.
+  </context>
+
+  <requirements>
+    - Prerequisites for running this command
+  </requirements>
+
+  <execution>
+    1. Step-by-step execution plan
+    2. What actions will be taken
+  </execution>
+
+  <validation>
+    - [ ] Checklist of success criteria
+  </validation>
+
+  <examples>
+    Usage examples with expected output
+  </examples>
+</instructions>
+```
+
+### Creating Custom Commands
+
+1. Create a new `.md` file in the appropriate category folder:
+   ```bash
+   touch .claude/commands/development/my-command.md
+   ```
+
+2. Follow the command structure template above
+
+3. Use the command with:
+   ```bash
+   /development:my-command
+   ```
+
+### Directory Structure
+
+```
+.claude/
+├── commands/
+│   ├── custom/
+│   │   └── domain-activator.xml
+│   ├── deployment/
+│   │   ├── deploy-staging.md
+│   │   ├── prepare-release.md
+│   │   └── rollback-procedure.md
+│   ├── development/
+│   │   ├── code-review.md
+│   │   ├── debug-session.md
+│   │   └── refactor-analysis.md
+│   ├── documentation/
+│   │   ├── api-docs.md
+│   │   ├── architecture-review.md
+│   │   └── update-readme.md
+│   ├── project/
+│   │   ├── create-feature.md
+│   │   ├── scaffold-component.md
+│   │   └── setup-environment.md
+│   └── testing/
+│       ├── coverage-analysis.md
+│       ├── generate-tests.md
+│       └── integration-tests.md
+├── config/
+│   ├── development.json
+│   ├── production.json
+│   ├── settings.json
+│   └── staging.json
+├── hooks/
+│   └── UserPromptSubmit/
+│       └── domain_dynamic_injector.py
+└── tests/
+    └── test_domain_dynamic_injector.py
+```
+
 ## Architecture
 
 ```
