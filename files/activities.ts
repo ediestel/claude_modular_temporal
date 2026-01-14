@@ -1,6 +1,9 @@
 /**
  * Temporal Activities for Claude Code Integration
  * These are the actual operations that interact with Claude Code CLI
+
+ **ATTENTION PLEASE These are examples for typescript, the repo claude_modular_temporal has been built with python
+ 
  */
 
 import { exec } from 'child_process';
