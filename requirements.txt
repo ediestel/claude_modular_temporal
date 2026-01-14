@@ -1,0 +1,11 @@
+# Temporal Python SDK
+temporalio>=1.5.0
+
+# Async utilities
+aiofiles>=23.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# JSON serialization for dataclasses
+dataclasses-json>=0.6.0

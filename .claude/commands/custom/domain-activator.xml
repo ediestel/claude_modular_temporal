@@ -1,0 +1,18 @@
+<instructions>
+  <context>
+    Explicitly enable or disable Claudine's dynamic domain specialization layer.
+    When enabled, Grok generates a full unmoderated domain template and injects it everywhere.
+    Default: disabled — pure agnostic core.
+  </context>
+
+  <execution>
+    Usage:
+    /custom:domain-activator enable
+    /custom:domain-activator disable
+    /custom:domain-activator status
+  </execution>
+
+  <examples>
+    /custom:domain-activator enable → Claudine: Domain layer activated. Ready for deep specialization.
+  </examples>
+</instructions>
