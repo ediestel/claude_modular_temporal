@@ -1,6 +1,13 @@
 /**
  * Temporal Worker - Executes workflows and activities
  * Run this in a separate terminal: node worker.js
+
+ /*
+
+ *ATTENTION PLEASE These are examples for typescript, the repo claude_modular_temporal has been built with python
+ 
+ */
+
  */
 
 import { Worker, NativeConnection } from '@temporalio/worker';
