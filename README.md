@@ -1,6 +1,6 @@
 # Claude Temporal
 
-A monitoring and orchestration framework that integrates Claude Code with [Temporal.io](https://temporal.io) for durable, observable, and recoverable LLM-assisted development workflows.
+A monitoring and orchestration framework that integrates Claude Code (extended with claude_modular - https://github.com/oxygen-fragment/claude-modular) with [Temporal.io](https://temporal.io) for durable, observable, and recoverable LLM-assisted development workflows.
 
 ## Overview
 
